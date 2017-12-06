@@ -368,7 +368,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/05/Symfony-4-升级注意事项/" itemprop="url">Symfony 4 升级注意事项</a></h1>
+                <a class="post-title-link" href="/2017/12/05/Symfony-4-升级注意事项/" itemprop="url">Symfony 4 注意事项</a></h1>
         
 
         <div class="post-meta">
@@ -420,7 +420,30 @@
       
         
           
-            
+            <p><a href="https://symfony.com/doc/current/setup/flex.html#upgrading-existing-applications-to-flex" target="_blank" rel="noopener">升级指南</a><br><a href="https://symfony.com/pdf/Symfony_best_practices_4.0.pdf" target="_blank" rel="noopener">Best practice</a></p>
+<ul>
+<li>创建新项目不再使用<code>symfony new xxx</code>, 现在使用<code>composer create-project symfony/skeleton my-project-flex</code>;</li>
+<li>parameters.*.yml不再使用，直接放到config/services.yamll;</li>
+<li>不建议自己新建Bundle: <code>Don&#39;t create any bundle to organize your application logic.</code>;</li>
+<li>入口文件为<code>public/index.php</code>,不再使用<code>app_dev.php</code>和<code>app.php</code>;</li>
+<li>在.env.dist定义在不同的设备上可能不同的环境变量</li>
+<li>在config/services.yaml配置一些应用级的选项(例如邮件发送地址等)，一般不需要改动</li>
+<li>有些配置建议使用常量来完成: <code>Use constants to define configuration options that rarely change.</code>,这点见仁见智吧，例如文章一页显示多少条的这种就适合用常量定义，然后放在entity，这样的话可以直接在twig访问</li>
+<li>建议所有的配置参数都加前缀，例如app.xxxxx, 避免和第三方的Bundle参数混淆</li>
+<li><p>service注册建议使用默认的写法，自动注册</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># makes classes in src/ available to be used as services</span><br><span class="line"># this creates a service per class whose id is the fully-qualified class name</span><br><span class="line">App\:</span><br><span class="line">    resource: &apos;../src/*&apos;</span><br><span class="line">    exclude: &apos;../src/&#123;Entity,Migrations,Tests&#125;&apos;</span><br><span class="line"></span><br><span class="line"># controllers are imported separately to make sure services can be injected</span><br><span class="line"># as action arguments even if you don&apos;t extend any base controller class</span><br><span class="line">App\Controller\:</span><br><span class="line">    resource: &apos;../src/Controller&apos;</span><br><span class="line">    tags: [&apos;controller.service_arguments&apos;]</span><br><span class="line"></span><br><span class="line"># add more service definitions when explicit configuration is needed</span><br><span class="line"># please note that last definitions always *replace* previous ones</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用yaml格式定义service<br>  <code>Use the YAML format to define your own services.</code><br>  这点随意，官方只是说这样子更简洁，并且对初学者比较友好</p>
+</li>
+<li>controller的方法命名不要加后缀’Action’:<code>Don&#39;t add the Action suffix to the methods of the controller actions.</code><br>  emmmm这个就很。。。。好吧之前都写习惯了，加不加看个人爱好</li>
+<li>不要使用@Template方法: <code>Don&#39;t use the @Template annotation to configure the template used by the controller.</code><br>  简言之，使用的话弊大于利，反正我也不喜欢用，不是很直观</li>
+<li>Use lowercased snake_case for directory and template names.</li>
+<li>Use a prefixed underscore for partial templates in template names.</li>
+<li>在src/Twig目录下防止twig extension，不需要手动注册<pre><code>Define your Twig extensions in the src/Twig/ directory. Your application will automatically detect them and configure them
+</code></pre></li>
+<li>assets的管理开始使用webpack了，这点蛮好的。    </li>
+</ul>
+
           
         
       
