@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="下载vagrant 下载vm(推荐virtual box，pd软件本身收费，box那个工具也是收费的) 直接下载官网提供的box(可能会比较慢，自备梯子)  *举个栗子    1vagrant box add envimation/ubuntu-xenial-docker https://atlas.hashicorp.com/envimation/boxes/ubuntu-xenial-doc">
+<meta name="description" content="下载vagrant 下载vm(推荐virtual box，pd软件本身收费，box那个工具也是收费的) 直接下载官网提供的box(可能会比较慢，自备梯子)  举个栗子    1vagrant box add envimation/ubuntu-xenial-docker https://atlas.hashicorp.com/envimation/boxes/ubuntu-xenial-dock">
 <meta name="keywords" content="工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vagrant搭建开发环境">
 <meta property="og:url" content="http://zhaosound.github.io/2017/12/17/vagrant搭建开发环境/index.html">
 <meta property="og:site_name" content="门前大桥下">
-<meta property="og:description" content="下载vagrant 下载vm(推荐virtual box，pd软件本身收费，box那个工具也是收费的) 直接下载官网提供的box(可能会比较慢，自备梯子)  *举个栗子    1vagrant box add envimation/ubuntu-xenial-docker https://atlas.hashicorp.com/envimation/boxes/ubuntu-xenial-doc">
+<meta property="og:description" content="下载vagrant 下载vm(推荐virtual box，pd软件本身收费，box那个工具也是收费的) 直接下载官网提供的box(可能会比较慢，自备梯子)  举个栗子    1vagrant box add envimation/ubuntu-xenial-docker https://atlas.hashicorp.com/envimation/boxes/ubuntu-xenial-dock">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-18T09:10:20.330Z">
+<meta property="og:updated_time" content="2017-12-18T09:12:58.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vagrant搭建开发环境">
-<meta name="twitter:description" content="下载vagrant 下载vm(推荐virtual box，pd软件本身收费，box那个工具也是收费的) 直接下载官网提供的box(可能会比较慢，自备梯子)  *举个栗子    1vagrant box add envimation/ubuntu-xenial-docker https://atlas.hashicorp.com/envimation/boxes/ubuntu-xenial-doc">
+<meta name="twitter:description" content="下载vagrant 下载vm(推荐virtual box，pd软件本身收费，box那个工具也是收费的) 直接下载官网提供的box(可能会比较慢，自备梯子)  举个栗子    1vagrant box add envimation/ubuntu-xenial-docker https://atlas.hashicorp.com/envimation/boxes/ubuntu-xenial-dock">
 
 
 
@@ -303,7 +303,7 @@
         <ul>
 <li>下载vagrant</li>
 <li>下载vm(推荐virtual box，pd软件本身收费，box那个工具也是收费的)</li>
-<li><p>直接下载官网提供的box(可能会比较慢，自备梯子)<br>  *举个栗子</p>
+<li><p>直接下载官网提供的box(可能会比较慢，自备梯子)<br>  举个栗子</p>
    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant box add envimation/ubuntu-xenial-docker https://atlas.hashicorp.com/envimation/boxes/ubuntu-xenial-docker</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在当前路径执行</p>
@@ -312,12 +312,27 @@
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vagrant up 启动当前虚拟机</span><br><span class="line">vagrant ssh ssh到当前虚拟机</span><br></pre></td></tr></table></figure>
 <ul>
 <li>虚拟机搭建完成之后，默认刚刚执行命令的路径会映射到虚拟机的/vagrant目录</li>
-<li><p>个性化配置在Vagrantfile中，修改完成执行<figure class="highlight plain"><figcaption><span>reload```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 静态ip访问: ```config.vm.network :private_network, ip: &quot;192.168.10.11&quot;</span><br></pre></td></tr></table></figure></p>
+<li><p>个性化配置在Vagrantfile中，修改完成执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant reload</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>静态ip访问: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network :private_network, ip: &quot;192.168.10.11&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>映射端口: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 1234</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>关于与其他人协同工作：</p>
 <ul>
-<li><p>映射端口: <figure class="highlight plain"><figcaption><span>"forwarded_port", guest: 80, host: 1234```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* 关于与其他人协同工作：</span><br><span class="line">    * 个性化定制当前的虚拟机，比如要安装Apache</span><br><span class="line">        * 方法一： 直接ssh之后在命令行安装，这样方便，但是缺点就是其他人没法用相同的环境一键安装</span><br><span class="line">        * 方法二：在根目录新建脚本文件，然后修改Vagrantfile</span><br><span class="line">            ```config.vm.provision :shell, path: &quot;bootstrap.sh&quot;</span><br></pre></td></tr></table></figure></p>
-<p>   这里的bootstrap.sh的内容可以是这样的：</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line"></span><br><span class="line">apt-get update</span><br><span class="line">apt-get install -y apache2</span><br><span class="line">if ! [ -L /var/www ]; then</span><br><span class="line">  rm -rf /var/www</span><br><span class="line">  ln -fs /vagrant /var/www</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-<p>   这样其他人拿到配置文件之后安装的时候就会自动安装Apache了。</p>
+<li><p>个性化定制当前的虚拟机，比如要安装Apache</p>
+<ul>
+<li>方法一： 直接ssh之后在命令行安装，这样方便，但是缺点就是其他人没法用相同的环境一键安装</li>
+<li><p>方法二：在根目录新建脚本文件，然后修改Vagrantfile</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.provision :shell, path: &quot;bootstrap.sh&quot;</span><br></pre></td></tr></table></figure>
+<p>  这里的bootstrap.sh的内容可以是这样的：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line"></span><br><span class="line">apt-get update</span><br><span class="line">apt-get install -y apache2</span><br><span class="line">if ! [ -L /var/www ]; then</span><br><span class="line">  rm -rf /var/www</span><br><span class="line">  ln -fs /vagrant /var/www</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p>  这样其他人拿到配置文件之后安装的时候就会自动安装Apache了。</p>
 </li>
 </ul>
 </li>
