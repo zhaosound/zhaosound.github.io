@@ -312,17 +312,17 @@
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vagrant up 启动当前虚拟机</span><br><span class="line">vagrant ssh ssh到当前虚拟机</span><br></pre></td></tr></table></figure>
 <ul>
 <li>虚拟机搭建完成之后，默认刚刚执行命令的路径会映射到虚拟机的/vagrant目录</li>
-<li><p>个性化配置在Vagrantfile中，修改完成执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant reload</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>静态ip访问: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network :private_network, ip: &quot;192.168.10.11&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>映射端口: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 1234</span><br></pre></td></tr></table></figure>
+<li>个性化配置在Vagrantfile中，修改完成执行    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant reload</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
+</ul>
+<pre><code>* 静态ip访问: 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network :private_network, ip: &quot;192.168.10.11&quot;</span><br></pre></td></tr></table></figure>
+
+* 映射端口: 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 1234</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
 <li><p>关于与其他人协同工作：</p>
 <ul>
 <li><p>个性化定制当前的虚拟机，比如要安装Apache</p>
