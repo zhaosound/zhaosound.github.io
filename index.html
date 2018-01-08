@@ -229,6 +229,466 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhaosound.github.io/2018/01/05/Symfony4开发项目步骤/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhaoxiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="门前大桥下">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/05/Symfony4开发项目步骤/" itemprop="url">Symfony4开发项目步骤</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-05T10:55:25+08:00">
+                2018-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Symfony4发布之后，项目的创建，结构等都发生了一些变化，这里大概记录一下从零开始创建一个Symfony4项目的步骤"><a href="#Symfony4发布之后，项目的创建，结构等都发生了一些变化，这里大概记录一下从零开始创建一个Symfony4项目的步骤" class="headerlink" title="Symfony4发布之后，项目的创建，结构等都发生了一些变化，这里大概记录一下从零开始创建一个Symfony4项目的步骤"></a>Symfony4发布之后，项目的创建，结构等都发生了一些变化，这里大概记录一下从零开始创建一个Symfony4项目的步骤</h1><ul>
+<li>使用composer新建项目：composer create-project symfony/skeleton symfony4</li>
+<li><p>安装需要使用的Bundle</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">composer require annotations</span><br><span class="line">composer require --dev profiler</span><br><span class="line">composer require doctrine maker</span><br><span class="line">composer require twig</span><br><span class="line">composer require validator</span><br><span class="line">composer require asset</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关于数据库<br>手动安装doctrine maker之后，开发环境下在.env文件添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DATABASE_URL=&quot;mysql://db_user:db_password@127.0.0.1:3306/db_name&quot;</span><br></pre></td></tr></table></figure>
+<p>相关命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  php bin/console doctrine:database:create</span><br><span class="line">  php bin/console make:entity Product</span><br><span class="line">  php bin/console doctrine:migrations:diff</span><br><span class="line">  php bin/console doctrine:migrations:migrate  </span><br><span class="line">  ```     </span><br><span class="line">* 生成controller</span><br></pre></td></tr></table></figure>
+<p>php bin/console make:controller ProductController</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* 关于js和css</span><br><span class="line">  symfony3中一直使用assetic管理样式文件，在symfony4中标推荐使用webpack encore</span><br><span class="line">  可以使用yarn或者npm进行包管理，symfony官方推荐yarn</span><br></pre></td></tr></table></figure>
+<p>brew install yarn<br>yarn add @symfony/webpack-encore –dev<br>yarn run encore dev (–watch)<br>```</p>
+</li>
+<li><p>关于模板<br>所有的twig文件放在根目录下templates路径下    </p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhaosound.github.io/2017/12/19/Python学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhaoxiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="门前大桥下">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/19/Python学习/" itemprop="url">Python学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T13:23:53+08:00">
+                2017-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>安装 <code>brew install python3</code></li>
+<li>mac自带python2.7，不建议卸载，可直接安装python3，也可以使用多版本管理工具pyenv等</li>
+<li>进入交互模式: <code>python3</code></li>
+<li>使用缩进阻止代码块，大小写敏感</li>
+<li>可以使用<code>&#39;&#39;&#39;...&#39;&#39;&#39;</code>代表多行内容</li>
+<li>空值是<code>none</code></li>
+<li>python是动态语言，变量类型不固定</li>
+<li><p>列表list</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">classmates = [&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]</span><br><span class="line">len(classmates)  =&gt;3</span><br><span class="line">classmates[-1]   =&gt;Tracy</span><br><span class="line">classmates.append(&apos;Adam&apos;)  =&gt; [&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;, &apos;Adam&apos;]</span><br><span class="line">classmates.insert(1, &apos;Jack&apos;) =&gt; [&apos;Michael&apos;, &apos;Jack&apos;, &apos;Bob&apos;, &apos;Tracy&apos;, &apos;Adam&apos;]</span><br><span class="line">classmates.pop() =&gt;删除最后一个元素</span><br><span class="line">classmates.pop(1) =&gt;删除指定元素</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>元组tuple, 有序列表,tuple一旦初始化就不能修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">classmates = (&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;)</span><br><span class="line">```  </span><br><span class="line">有1个元素的tuple定义时必须加一个逗号`,`</span><br></pre></td></tr></table></figure>
+<p>t = (1,)  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* dict，键值对</span><br></pre></td></tr></table></figure>
+<p>d = {‘Michael’: 95, ‘Bob’: 75, ‘Tracy’: 85}<br>d[‘Michael’]<br>‘Thomas’ in d  =&gt; False<br>d.get(‘Thomas’) =&gt; None<br>d.pop(‘Bob’) =&gt; 删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* set</span><br></pre></td></tr></table></figure>
+<p>s = set([1, 1, 2, 2, 3, 3]) =&gt; {1, 2, 3}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 运算</span><br><span class="line">    布尔值运算可以使用`and`,`or`,`not`</span><br><span class="line">    `%`取余, `//`取整</span><br><span class="line">* 条件控制</span><br></pre></td></tr></table></figure>
+<p>  age = 3<br>  if age &gt;= 18:</p>
+<pre><code>print(&apos;adult&apos;)
+</code></pre><p>  elif age &gt;= 6:</p>
+<pre><code>print(&apos;teenager&apos;)
+</code></pre><p>  else:</p>
+<pre><code>print(&apos;kid&apos;)
+</code></pre>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* 循环</span><br><span class="line">    for...in</span><br></pre></td></tr></table></figure>
+<p>  sum = 0<br>  for x in range(101):</p>
+<pre><code>sum = sum + x
+</code></pre><p>  print(sum)</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">while</span><br></pre></td></tr></table></figure>
+<p>  sum = 0<br>  n = 99<br>  while n &gt; 0:</p>
+<pre><code>sum = sum + n
+n = n - 2
+</code></pre><p>  print(sum)</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 函数</span><br></pre></td></tr></table></figure>
+<p>  def my_abs(x):</p>
+<pre><code>if x &gt;= 0:
+    return x
+else:
+    return -x
+</code></pre>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">支持默认参数</span><br></pre></td></tr></table></figure>
+<p>  def power(x, n=2):</p>
+<pre><code>s = 1
+while n &gt; 0:
+    n = n - 1
+    s = s * x
+return s
+</code></pre>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 常用函数</span><br></pre></td></tr></table></figure>
+<p>  获取用户输入 input()<br>  输出 print(“hello world”)<br>  格式化输出 ‘Hello, %s’ % ‘world’<br>  ```</p>
+</li>
+<li>爬虫<br>  Scrapy框架<br>  安装：pip3 install scrapy<br>  scrapy startproject tutorial    </li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhaosound.github.io/2017/12/19/swoole相关/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhaoxiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="门前大桥下">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/19/swoole相关/" itemprop="url">swoole相关</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T09:53:29+08:00">
+                2017-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>需要了解的知识<ul>
+<li>多进程/多线程<ul>
+<li>了解Linux操作系统进程和线程的概念</li>
+<li>了解Linux进程/线程切换调度的基本知识</li>
+<li>了解进程间通信的基本知识，如管道、UnixSocket、消息队列、共享内存</li>
+</ul>
+</li>
+<li>SOCKET<ul>
+<li>了解SOCKET的基本操作如accept/connect、send/recv、close、listen、bind</li>
+<li>了解SOCKET的接收缓存区、发送缓存区、阻塞/非阻塞、超时等概念</li>
+</ul>
+</li>
+<li>IO复用<ul>
+<li>了解select/poll/epoll</li>
+<li>了解基于select/epoll实现的事件循环，Reactor模型</li>
+<li>了解可读事件、可写事件</li>
+</ul>
+</li>
+<li>TCP/IP网络协议<ul>
+<li>了解TCP/IP协议</li>
+<li>了解TCP、UDP传输协议</li>
+</ul>
+</li>
+<li>调试工具<ul>
+<li>使用 gdb 调试Linux程序</li>
+<li>使用 strace 跟踪进程的系统调用</li>
+<li>使用 tcpdump 跟踪网络通信过程</li>
+<li>其他Linux系统工具，如ps、lsof、top、vmstat、netstat、sar、ss等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>未完待续                                         </li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://zhaosound.github.io/2017/12/17/vagrant搭建开发环境/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -304,10 +764,10 @@
 <li>下载vagrant</li>
 <li>下载vm(推荐virtual box，pd软件本身收费，box那个工具也是收费的)</li>
 <li><p>直接下载官网提供的box(可能会比较慢，自备梯子)<br>  举个栗子</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant box add envimation/ubuntu-xenial-docker https://atlas.hashicorp.com/envimation/boxes/ubuntu-xenial-docker</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant box add envimation/ubuntu-xenial-docker(虚拟机名称) https://atlas.hashicorp.com/envimation/boxes/ubuntu-xenial-docker(box名称)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在当前路径执行</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant init envimation/ubuntu-xenial-docker</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant init envimation/ubuntu-xenial-docker(虚拟机名称)</span><br></pre></td></tr></table></figure>
 <p>  上面的命令会在当前路径生成 Vagrantfile 和 .vagrant目录，主要的配置都在Vagrantfile中</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vagrant up 启动当前虚拟机</span><br><span class="line">vagrant ssh ssh到当前虚拟机</span><br></pre></td></tr></table></figure>
 <p>  虚拟机搭建完成之后，默认刚刚执行命令的路径会映射到虚拟机的/vagrant目录<br>  个性化配置在Vagrantfile中，修改完成执行    </p>
@@ -327,11 +787,20 @@
 </li>
 </ul>
 </li>
-<li>一些其他注意事项：<ul>
-<li>关于Apache作为服务器时候的权限问题：<br>  在主机通过域名/ip/端口访问虚拟机，默认的用户是vagrant，所属组是vagrant docker,可能需要到配置文件修改            </li>
+<li><p>一些其他注意事项：</p>
+<ul>
+<li>关于Apache作为服务器时候的权限问题：<br>  在主机通过域名/ip/端口访问虚拟机，默认的用户是vagrant，所属组是vagrant docker,可能需要到配置文件修改</li>
+<li><p>每次启动都检查更新真的很烦，添加一下代码就好了</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">        config.vm.box_check_update = false</span><br><span class="line">        ```                                   </span><br><span class="line">* 常用命令</span><br></pre></td></tr></table></figure>
+<p>vagrant init       # 初始化<br>vagrant up         # 启动虚拟机<br>vagrant suspend    # 挂起虚拟机<br>vagrant halt       # 关闭虚拟机<br>vagrant reload     # 重启虚拟机<br>vagrant ssh        # SSH 至虚拟机<br>vagrant status     # 查看虚拟机运行状态<br>vagrant destroy    # 销毁当前虚拟机</p>
+<p>vagrant box list   # 查看目前已有的box<br>vagrant box add    # 增加box<br>vagrant box remove # 删除box</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* 打包相关</span><br><span class="line">    打包前关闭虚拟机(vagrant halt)</span><br></pre></td></tr></table></figure>
+<p>vagrant package (–ouput box名称)</p>
+<p>```       </p>
+</li>
 </ul>
 </li>
-<li>常用命令  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vagrant init  # 初始化</span><br><span class="line">vagrant up  # 启动虚拟机</span><br><span class="line">vagrant halt  # 关闭虚拟机</span><br><span class="line">vagrant reload  # 重启虚拟机</span><br><span class="line">vagrant ssh  # SSH 至虚拟机</span><br><span class="line">vagrant status  # 查看虚拟机运行状态</span><br><span class="line">vagrant destroy  # 销毁当前虚拟机</span><br></pre></td></tr></table></figure></li>
+<li>补充<br>  网络问题的话可以把镜像box下载到本地，然后<code>vagrant add 虚拟机名 本地镜像名</code><br>  ubuntu安装缓慢的话可以更改源文件配置(更改下载镜像地址，比如使用阿里云)<br>  共享目录config.vm.synced_folder “本机目录”, “虚拟机目录”<br>  更改虚拟机的名字 vb.name=”名字”(写在config.vm.provider内部)<br>  在虚拟机启动过程中出现问题，可以修改配置文件 vb.gui = true 进行调试</li>
 </ul>
 
           
@@ -1045,7 +1514,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1058,7 +1527,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -1097,7 +1566,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

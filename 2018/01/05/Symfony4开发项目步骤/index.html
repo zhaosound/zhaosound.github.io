@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="工具,hexo," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="新建repository,命名注意: {github username}.github.io 本地搭建hexo环境 hexo init {github username} cd {github username} npm install   配置config文件deploy:     type: git     repo: https://github.com/{github username}">
-<meta name="keywords" content="工具,hexo">
+<meta name="description" content="Symfony4发布之后，项目的创建，结构等都发生了一些变化，这里大概记录一下从零开始创建一个Symfony4项目的步骤 使用composer新建项目：composer create-project symfony/skeleton symfony4 安装需要使用的Bundle   123456composer require annotationscomposer require --dev p">
 <meta property="og:type" content="article">
-<meta property="og:title" content="github page &amp; hexo搭建">
-<meta property="og:url" content="http://zhaosound.github.io/2017/12/05/github-page-hexo搭建/index.html">
+<meta property="og:title" content="Symfony4开发项目步骤">
+<meta property="og:url" content="http://zhaosound.github.io/2018/01/05/Symfony4开发项目步骤/index.html">
 <meta property="og:site_name" content="门前大桥下">
-<meta property="og:description" content="新建repository,命名注意: {github username}.github.io 本地搭建hexo环境 hexo init {github username} cd {github username} npm install   配置config文件deploy:     type: git     repo: https://github.com/{github username}">
+<meta property="og:description" content="Symfony4发布之后，项目的创建，结构等都发生了一些变化，这里大概记录一下从零开始创建一个Symfony4项目的步骤 使用composer新建项目：composer create-project symfony/skeleton symfony4 安装需要使用的Bundle   123456composer require annotationscomposer require --dev p">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-05T07:33:15.740Z">
+<meta property="og:updated_time" content="2018-01-05T07:39:49.351Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="github page &amp; hexo搭建">
-<meta name="twitter:description" content="新建repository,命名注意: {github username}.github.io 本地搭建hexo环境 hexo init {github username} cd {github username} npm install   配置config文件deploy:     type: git     repo: https://github.com/{github username}">
+<meta name="twitter:title" content="Symfony4开发项目步骤">
+<meta name="twitter:description" content="Symfony4发布之后，项目的创建，结构等都发生了一些变化，这里大概记录一下从零开始创建一个Symfony4项目的步骤 使用composer新建项目：composer create-project symfony/skeleton symfony4 安装需要使用的Bundle   123456composer require annotationscomposer require --dev p">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://zhaosound.github.io/2017/12/05/github-page-hexo搭建/"/>
+  <link rel="canonical" href="http://zhaosound.github.io/2018/01/05/Symfony4开发项目步骤/"/>
 
 
 
 
 
-  <title>github page & hexo搭建 | 门前大桥下</title>
+  <title>Symfony4开发项目步骤 | 门前大桥下</title>
   
 
 
@@ -233,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhaosound.github.io/2017/12/05/github-page-hexo搭建/">
+    <link itemprop="mainEntityOfPage" href="http://zhaosound.github.io/2018/01/05/Symfony4开发项目步骤/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhaoxiang">
@@ -250,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">github page & hexo搭建</h1>
+          <h1 class="post-title" itemprop="name headline">Symfony4开发项目步骤</h1>
         
 
         <div class="post-meta">
@@ -262,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T15:12:49+08:00">
-                2017-12-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-05T10:55:25+08:00">
+                2018-01-05
               </time>
             
 
@@ -300,25 +299,20 @@
       
 
       
-        <ul>
-<li>新建repository,命名注意: {github username}.github.io</li>
-<li>本地搭建hexo环境<ul>
-<li>hexo init {github username}</li>
-<li>cd {github username}</li>
-<li>npm install</li>
-</ul>
+        <h1 id="Symfony4发布之后，项目的创建，结构等都发生了一些变化，这里大概记录一下从零开始创建一个Symfony4项目的步骤"><a href="#Symfony4发布之后，项目的创建，结构等都发生了一些变化，这里大概记录一下从零开始创建一个Symfony4项目的步骤" class="headerlink" title="Symfony4发布之后，项目的创建，结构等都发生了一些变化，这里大概记录一下从零开始创建一个Symfony4项目的步骤"></a>Symfony4发布之后，项目的创建，结构等都发生了一些变化，这里大概记录一下从零开始创建一个Symfony4项目的步骤</h1><ul>
+<li>使用composer新建项目：composer create-project symfony/skeleton symfony4</li>
+<li><p>安装需要使用的Bundle</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">composer require annotations</span><br><span class="line">composer require --dev profiler</span><br><span class="line">composer require doctrine maker</span><br><span class="line">composer require twig</span><br><span class="line">composer require validator</span><br><span class="line">composer require asset</span><br></pre></td></tr></table></figure>
 </li>
-<li>配置config文件<pre><code>deploy:
-    type: git
-    repo: https://github.com/{github username}/{github username}.github.io.git
-    branch: master
-</code></pre></li>
-<li>常用命令<ul>
-<li>启动本地服务器: hexo server</li>
-<li>清除本地缓存: hexo clean</li>
-<li>生成本地发布文件: hexo g</li>
-<li>发布到github page: hexo d    </li>
-</ul>
+<li><p>关于数据库<br>手动安装doctrine maker之后，开发环境下在.env文件添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DATABASE_URL=&quot;mysql://db_user:db_password@127.0.0.1:3306/db_name&quot;</span><br></pre></td></tr></table></figure>
+<p>相关命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  php bin/console doctrine:database:create</span><br><span class="line">  php bin/console make:entity Product</span><br><span class="line">  php bin/console doctrine:migrations:diff</span><br><span class="line">  php bin/console doctrine:migrations:migrate  </span><br><span class="line">  ```     </span><br><span class="line">* 生成controller</span><br></pre></td></tr></table></figure>
+<p>php bin/console make:controller ProductController</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* 关于js和css</span><br><span class="line">  symfony3中一直使用assetic管理样式文件，在symfony4中标推荐使用webpack encore</span><br><span class="line">  可以使用yarn或者npm进行包管理，symfony官方推荐yarn</span><br></pre></td></tr></table></figure>
+<p>brew install yarn<br>yarn add @symfony/webpack-encore –dev<br>yarn run encore dev (–watch)<br>```</p>
+</li>
+<li><p>关于模板<br>所有的twig文件放在根目录下templates路径下    </p>
 </li>
 </ul>
 
@@ -336,14 +330,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/工具/" rel="tag"># 工具</a>
-          
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
-        </div>
-      
 
       
       
@@ -353,15 +339,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/12/19/Python学习/" rel="next" title="Python学习">
+                <i class="fa fa-chevron-left"></i> Python学习
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/05/Symfony-4-升级注意事项/" rel="prev" title="Symfony 4 注意事项">
-                Symfony 4 注意事项 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -413,8 +399,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -467,6 +462,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Symfony4发布之后，项目的创建，结构等都发生了一些变化，这里大概记录一下从零开始创建一个Symfony4项目的步骤"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Symfony4&#x53D1;&#x5E03;&#x4E4B;&#x540E;&#xFF0C;&#x9879;&#x76EE;&#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x7ED3;&#x6784;&#x7B49;&#x90FD;&#x53D1;&#x751F;&#x4E86;&#x4E00;&#x4E9B;&#x53D8;&#x5316;&#xFF0C;&#x8FD9;&#x91CC;&#x5927;&#x6982;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Symfony4&#x9879;&#x76EE;&#x7684;&#x6B65;&#x9AA4;" class="headerlink" title="Symfony4&#x53D1;&#x5E03;&#x4E4B;&#x540E;&#xFF0C;&#x9879;&#x76EE;&#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x7ED3;&#x6784;&#x7B49;&#x90FD;&#x53D1;&#x751F;&#x4E86;&#x4E00;&#x4E9B;&#x53D8;&#x5316;&#xFF0C;&#x8FD9;&#x91CC;&#x5927;&#x6982;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Symfony4&#x9879;&#x76EE;&#x7684;&#x6B65;&#x9AA4;"></a>Symfony4&#x53D1;&#x5E03;&#x4E4B;&#x540E;&#xFF0C;&#x9879;&#x76EE;&#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x7ED3;&#x6784;&#x7B49;&#x90FD;&#x53D1;&#x751F;&#x4E86;&#x4E00;&#x4E9B;&#x53D8;&#x5316;&#xFF0C;&#x8FD9;&#x91CC;&#x5927;&#x6982;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Symfony4&#x9879;&#x76EE;&#x7684;&#x6B65;&#x9AA4;</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
