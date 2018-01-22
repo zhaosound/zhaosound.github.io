@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="门前大桥下">
-<meta property="og:url" content="http://zhaosound.github.io/tags/symfony/index.html">
+<meta name="description" content="定义  队列结构的中间件； 消息放入之后，不需要理解处理； 由订阅者/消费者按照顺序处理；   场景  冗余 解耦  流量削峰 异步通信 扩展性 排序保证 ……   优缺点  MySQL：可靠，简单，速度慢； Redis：速度快，单个消息包过大的时候效率低； 消息系统：专业，可靠，学习成本高；                消息处理触发机制  死循环方式读取：易实现，发生故障时无法及时恢复； 定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="消息队列">
+<meta property="og:url" content="http://zhaosound.github.io/2018/01/17/消息队列/index.html">
 <meta property="og:site_name" content="门前大桥下">
+<meta property="og:description" content="定义  队列结构的中间件； 消息放入之后，不需要理解处理； 由订阅者/消费者按照顺序处理；   场景  冗余 解耦  流量削峰 异步通信 扩展性 排序保证 ……   优缺点  MySQL：可靠，简单，速度慢； Redis：速度快，单个消息包过大的时候效率低； 消息系统：专业，可靠，学习成本高；                消息处理触发机制  死循环方式读取：易实现，发生故障时无法及时恢复； 定">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-17T06:56:31.703Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="门前大桥下">
+<meta name="twitter:title" content="消息队列">
+<meta name="twitter:description" content="定义  队列结构的中间件； 消息放入之后，不需要理解处理； 由订阅者/消费者按照顺序处理；   场景  冗余 解耦  流量削峰 异步通信 扩展性 排序保证 ……   优缺点  MySQL：可靠，简单，速度慢； Redis：速度快，单个消息包过大的时候效率低； 消息系统：专业，可靠，学习成本高；                消息处理触发机制  死循环方式读取：易实现，发生故障时无法及时恢复； 定">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://zhaosound.github.io/tags/symfony/"/>
+  <link rel="canonical" href="http://zhaosound.github.io/2018/01/17/消息队列/"/>
 
 
 
 
 
-  <title>标签: symfony | 门前大桥下</title>
+  <title>消息队列 | 门前大桥下</title>
   
 
 
@@ -140,7 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,54 +218,174 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>symfony<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhaosound.github.io/2018/01/17/消息队列/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhaoxiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="门前大桥下">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/12/05/Symfony-4-升级注意事项/" itemprop="url">
-              
-                <span itemprop="name">Symfony 4 注意事项</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">消息队列</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-05T15:41:19+08:00"
-              content="2017-12-05" >
-          12-05
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-17T14:25:06+08:00">
+                2018-01-17
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><p>定义</p>
+<ul>
+<li>队列结构的中间件；</li>
+<li>消息放入之后，不需要理解处理；</li>
+<li>由订阅者/消费者按照顺序处理；</li>
+</ul>
+</li>
+<li><p>场景</p>
+<ul>
+<li>冗余</li>
+<li>解耦 </li>
+<li>流量削峰</li>
+<li>异步通信</li>
+<li>扩展性</li>
+<li>排序保证</li>
+<li>……</li>
+</ul>
+</li>
+<li><p>优缺点</p>
+<ul>
+<li>MySQL：可靠，简单，速度慢；</li>
+<li>Redis：速度快，单个消息包过大的时候效率低；</li>
+<li>消息系统：专业，可靠，学习成本高；             </li>
+</ul>
+</li>
+<li><p>消息处理触发机制</p>
+<ul>
+<li>死循环方式读取：易实现，发生故障时无法及时恢复；</li>
+<li>定时任务：压力均分，有处理量上限；</li>
+<li>守护进程：类似php-fpm，php-cg；</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/12/Symfony表关联的一些问题/" rel="next" title="Symfony表关联的一些问题">
+                <i class="fa fa-chevron-left"></i> Symfony表关联的一些问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -269,6 +393,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -476,6 +604,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
